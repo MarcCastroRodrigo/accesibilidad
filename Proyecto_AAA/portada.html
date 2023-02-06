@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Portada</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <style>
+      .botonAnuncio3:active {
+        background-color: orange;
+      }
+      .slide {
+              position: relative;
+              box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+          }
+      .slide-inner {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+      }
+      .slide-open:checked + .slide-item {
+          position: static;
+          opacity: 100;
+      }
+      .slide-item {
+          position: absolute;
+          opacity: 0;
+          -webkit-transition: opacity 0.6s ease-out;
+          transition: opacity 0.6s ease-out;
+      }
+      .slide-control {
+          background: rgba(0, 0, 0, 0.28);
+          border-radius: 50%;
+          color: #fff;
+          cursor: pointer;
+          display: none;
+          font-size: 40px;
+          height: 40px;
+          line-height: 35px;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(0, -50%);
+          cursor: pointer;
+          -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          text-align: center;
+          width: 40px;
+          z-index: 10;
+      }
+      .slide-control.prev {
+          left: 2%;
+      }
+      .slide-control.next {
+          right: 2%;
+      }
+      .slide-control:hover {
+          background: rgba(0, 0, 0, 0.8);
+          color: #aaaaaa;
+      }
+      #slide-1:checked ~ .control-1,
+      #slide-2:checked ~ .control-2,
+      #slide-3:checked ~ .control-3 {
+          display: block;
+      }
+      .slide-indicador {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          bottom: 2%;
+          left: 0;
+          right: 0;
+          text-align: center;
+          z-index: 10;
+      }
+      .slide-indicador li {
+          display: inline-block;
+          margin: 0 5px;
+      }
+      .slide-circulo {
+          color: #828282;
+          cursor: pointer;
+          display: block;
+          font-size: 35px;
+      }
+      .slide-circulo:hover {
+          color: #aaaaaa;
+      }
+      #slide-1:checked ~ .control-1 ~ .slide-indicador 
+            li:nth-child(1) .slide-circulo,
+      #slide-2:checked ~ .control-2 ~ .slide-indicador 
+            li:nth-child(2) .slide-circulo,
+      #slide-3:checked ~ .control-3 ~ .slide-indicador 
+            li:nth-child(3) .slide-circulo {
+          color: #428bca;
+      }
+      #titulo {
+          width: 100%;
+          position: absolute;
+          padding: 0px;
+          margin: 0px auto;
+          text-align: center;
+          font-size: 27px;
+          color: rgba(255, 255, 255, 1);
+          font-family: 'Open Sans', sans-serif;
+          z-index: 9999;
+          text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+                -1px 0px 2px rgba(255, 255, 255, 0);
+      }
+      .imagenesCarrusel {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="padre">
+    <header>
+      <div class="header1">
+        <div class="header1-1">
+          <div>
+            <div>
+          <div>
+            <img src="imagenes/cabecera/pin-de-ubicacion.png" alt="ubicacion">
+            <span>Box 565, Charlestown, Nevis, West Indies</span>
+          </div>
+          <div>
+            <img src="imagenes/cabecera/reloj-de-pared.png" alt="reloj">
+            <span>Mon - Sat 8:00 AM - 17:30 PM</span>
+          </div>
+          </div>
+        <div>
+          <div>
+            <span>Currency:</span> <select name="select" class="select1" aria-label="Selecciona un tipo de pago">
+              <option value="value1">USD</option>
+            </select>
+          </div>
+          <div>
+            <span>Language:</span> <select name="select2" class="select1" aria-label="Selecciona un lenguaje">
+              <option value="value1">EN</option>
+            </select>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+        <div class="header2">
+          <span><strong>HOTLINE: +0 (800) 423-754</strong></span>
+        <h1><img src="imagenes/cabecera/Screenshot_20221017_165429.png" alt="apart" class="logoApar"></h1>
+        <div class="iconosHeader" style="width: 83px;">
+          <img src="imagenes/cabecera/lupa.png" alt="lupa">
+          <img src="imagenes/cabecera/me-gusta.png" alt="corazon">
+          <img src="imagenes/cabecera/bolsa-de-la-compra.png" alt="bolsa">
+        </div>
+      </div>    
+    </header>
+    <nav>
+      <ul class="nav2">
+        <li><a href="portada.html" class="shopDepartments">INICIO</a></li>
+        <li><a href="galeria.html">GALERIA</a></li>
+        <li><a href="mapaweb.html">MAPA WEB</a></li>
+        <li><a href="noticias.html">NOTICIAS</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="slide">
+            <div class="slide-inner">
+                <input class="slide-open" type="radio" id="slide-1" 
+                      name="slide" checked="checked">
+                <div class="slide-item">
+                    <img src="imagenes/portada/imagenCarrusel.png" class="imagenesCarrusel" alt="img">
+                </div>
+                <input class="slide-open" type="radio" id="slide-2" 
+                      name="slide">
+                <div class="slide-item">
+                    <img src="imagenes/portada/imagenCarrusel2.jpg" class="imagenesCarrusel" alt="img">
+                </div>
+                <input class="slide-open" type="radio" id="slide-3" 
+                      name="slide">
+                <div class="slide-item">
+                    <img src="imagenes/portada/imagenCarrusel3.jpg" class="imagenesCarrusel" alt="img">
+                </div>
+                <label for="slide-3" class="slide-control prev control-1">‹</label>
+                <label for="slide-2" class="slide-control next control-1">›</label>
+                <label for="slide-1" class="slide-control prev control-2" aria-label="Foto de un vehiculo en el carrusel">‹</label>
+                <label for="slide-3" class="slide-control next control-2">›</label>
+                <label for="slide-2" class="slide-control prev control-3">‹</label>
+                <label for="slide-1" class="slide-control next control-3">›</label>
+                <ol class="slide-indicador">
+                    <li>
+                        <label for="slide-1" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                        <label for="slide-2" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                        <label for="slide-3" class="slide-circulo">•</label>
+                    </li>
+                </ol>
+            </div>
+        </div>
+      <section class="busquedaRapida">
+        <h2 class="titulos">Búsqueda rápida</h2>
+        <form action="#" method="post" class="formBusqueda">
+        <select name="marcas" id="marcas" aria-label="Selecciona una marca de automóvil">
+          <option value="">-- Make --</option>
+      </select>
+      <select name="modelo" id="modelo" disabled aria-label="Selecciona un modelo">
+        <option value="">-- Model --</option>
+      </select>
+      <select name="anyo" id="anyo" disabled aria-label="Selecciona un año">
+        <option value="">-- Year --</option>
+      </select>
+          <input type="submit" id="searchBusqueda" value="SEARCH">
+      </form>
+      </section>
+      <section class="sectionPrimProductos">
+        <h2>Productos:</h2>
+        <div class="divPrimProductos">
+          <div><img src="imagenes/portada/prod1.png" alt="prod1">
+          <a href="#"><strong>STOPTECH</strong></a></div>
+          <div><img src="imagenes/portada/prod2.png" alt="prod2">
+          <a href="#"><strong>WHEEL & TIRE</strong></a></div>
+          <div><img src="imagenes/portada/prod3.png" alt="prod3">
+          <a href="#"><strong>CAMERA</strong></a></div>
+          <div><img src="imagenes/portada/prod4.png" alt="prod4">
+          <a href="#"><strong>TURBO</strong></a></div>
+          <div><img src="imagenes/portada/prod5.png" alt="prod5">
+          <a href="#"><strong>STEERING</strong></a></div>
+        </div>
+      </section>
+      <section class="masProductos">
+        <h2>Visualiza más productos aqui:</h2>
+        <div class="anuncios">
+          <article aria-label="ruedas">
+            <img src="imagenes/portada/anuncio1.png" alt="anuncio1">
+            <div><a href="#" class="anuncio1Enlace">SHOP NOW</a></div>
+          </article>
+          <article class="anuncios" aria-label="Segundo anuncio de la página web">
+            <a href="#"><img src="imagenes/portada/anuncio2.png" alt="anuncio2"></a>
+          </article>
+        </div>    
+      </section>
+      <section class="productos">
+        <h2>Productos:</h2>
+        <div class="menuProductos">
+          <span><strong>SERVICE KITS</strong></span>
+          <span><strong>TRENDING</strong></span>
+          <span><strong>FURNITURE</strong></span>
+        </div>
+        <div class="divProductos">
+          <article aria-label="producto1">
+            <img src="imagenes/portada/prod6.png" alt="prod6">
+            <a href="#"><strong>ARPER ROUND</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+              <span><del>$79.90</del><strong>$78.00</strong></span>
+            <div class="sale">Sale !</div>
+          </article>
+          <article aria-label="producto2">
+            <img src="imagenes/portada/prod7.png" alt="prod7">
+            <a href="#"><strong>AUTO OIL</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+            <span><del>$49.90</del><strong>$29.90</strong></span>
+            <div class="sale">Sale !</div>
+          </article>
+          <article aria-label="producto3">
+            <img src="imagenes/portada/prod8.png" alt="prod8">
+            <a href="#"><strong>WALLNUT WALL</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+            <span>$50.00</span>
+          </article>
+          <article aria-label="producto4">
+            <img src="imagenes/portada/prod80.png" alt="prod9">
+            <a href="#"><strong>TAIL LIGHTS</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+            <span>$60.90</span>
+          </article>
+          <article aria-label="producto5">
+            <img src="imagenes/portada/prod10.png" alt="prod10">
+            <a href="#"><strong>OTTOMAN TURBO</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+            <span><del>$29.90</del><span><strong>$29.00</strong></span></span>
+            <div class="sale">Sale !</div>
+          </article>
+          <article aria-label="producto6">
+            <img src="imagenes/portada/prod11.png" alt="prod11">
+            <a href="#"><strong>EARPHONE CASE</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+            <span><del>$397.90</del><span><strong>$350.90</strong></span></span>
+            <div class="sale">Sale !</div>
+          </article>
+          <article aria-label="producto7">
+            <img src="imagenes/portada/prod12.png" alt="prod12">
+            <a href="#"><strong>KIME TURBO</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+            <span>$67.90 - $124.90</span>         
+          </article>
+          <article aria-label="producto8">
+            <img src="imagenes/portada/prod13.png" alt="prod13">
+            <a href="#"><strong>WALLNUT DESK</strong></a>
+            <img src="imagenes/portada/estrellas.png" alt="estrellas">
+            <span>$100.00</span>
+            <div class="soldout">Sold out</div>
+          </article>
+        </div>                    
+      </section>
+      <section class="masProductos2">
+        <h2>Publicidad</h2>
+        <article aria-label="producto9">
+        <h3>Visualiza más productos aqui:</h3>
+        <img src="imagenes/portada/anuncio32.png" alt="anuncio3">
+        <form action="#" method="post">
+          <input type="submit" value="SHOP NOW" class="botonAnuncio3">
+        </form>
+      </article>
+      </section>
+      <section class="marcas">
+        <div>
+          <h3>CHOOSE PARTS BY BRAND</h3>
+          <span class="gris">Lorem ipsum dolor sit amet consectetur</span>
+        </div> 
+        <ul class="divMarcas">
+          <li><a href="#"><img src="imagenes/portada/marca1.png" alt="marca1"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca2.png" alt="marca2"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca3.png" alt="marca3"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca4.png" alt="marca4"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca5.png" alt="marca5"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca6.png" alt="marca6"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca7.png" alt="marca7"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca8.png" alt="marca8"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca9.png" alt="marca9"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca10.png" alt="marca10"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca11.png" alt="marca11"></a></li>
+          <li><a href="#"><img src="imagenes/portada/marca12.png" alt="marca12"></a></li>
+        </ul>         
+      </section>
+      <section style="display: flex; justify-content: center; padding-top: 100px; padding-bottom: 50px;">
+        <div class="ofertas">
+          <article aria-label="oferta1">
+            <div class="imagenesOfertas">
+              <img src="imagenes/portada/camion.png" alt="camion">
+            </div> 
+            <div>
+              <h3 class="titulosOfertas">FREE DELIVERY</h3>
+            <p class="gris">Worldwide from $27</p>
+              </div>        
+          </article>
+          <article aria-label="oferta2">
+            <div class="imagenesOfertas">
+              <img src="imagenes/portada/placa.png" alt="placa">
+            </div>
+            <div>
+              <h3 class="titulosOfertas">100% GENUINE</h3>
+              <p class="gris">100% genuine goods</p>
+            </div>
+          </article>
+          <article aria-label="oferta3">
+            <div class="imagenesOfertas">
+              <img src="imagenes/portada/paquete.png" alt="paquete">
+            </div>
+            <div>
+              <h3 class="titulosOfertas">EZ PARTS RETURNS</h3>
+              <p class="gris">365 days return</p>
+            </div>
+          </article>
+          <article aria-label="oferta4">
+            <div class="imagenesOfertas">
+              <img src="imagenes/portada/regalo.png" alt="regalo">
+            </div>
+            <div>
+              <h3 class="titulosOfertas">LOYAL CUSTOMERS</h3>
+              <p class="gris">100k items available</p>
+            </div>
+          </article>
+        </div>       
+      </section>
+      <img src="imagenes/portada/logo.png" alt="logo" class="logoPersonalizado">
+      <div class="multimedia">
+        <div class="divMultimedia">
+          <video width="50%" controls style="aspect-ratio: 16/9;">
+            <source src="multimedia/Proyectocoches.mp4" type="video/mp4">
+          </video>
+          <iframe src="https://www.youtube.com/embed/M9Gs4RyRBSA"
+          title="YouTube video player" allow="accelerometer; autoplay; 
+          clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+        </div>
+        <audio controls>
+          <source src="multimedia/audio.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </main>
+    <footer>
+      <div class="mainFooter">
+        <section>
+          <h3>HELP & SUPPORT</h3>
+          <a href="#">Whishlist</a>
+          <a href="#">My account</a>
+          <a href="#">Store locator</a>
+          <a href="#">FAQ</a>
+        </section>
+        <section>
+          <h3>CUSTOMER SERVICE</h3>
+          <a href="#">Support Center</a>
+          <a href="#">Policies</a>
+          <a href="#">Returns</a>
+          <a href="#">FAQ</a>
+        </section>
+        <section>
+          <h3>ABOUT US</h3>
+          <a href="#">Partners</a>
+          <a href="#">Contact us</a>
+          <a href="#">Product Recall</a>
+          <a href="#">Shipping</a>
+          <a href="#">Blog</a>
+        </section>
+        <section>
+          <h3>CONTACT</h3>
+          <span><img src="imagenes/pie/ubicacion.png" alt="ubi"> 
+          Box 565, Charlestown, Nevis, West Indies</span>
+          <span><img src="imagenes/pie/telefono.png" alt="telefono"> Phone: +(48) 880 456 789</span>
+          <span><img src="imagenes/pie/correo.png" alt="correo"> Email: help.apar@gmail.com</span>
+          <div>
+            <img src="imagenes/pie/facebook2.png" alt="facebook">
+            <img src="imagenes/pie/twitter2.png" alt="twitter">
+            <img src="imagenes/pie/youtube2.png" alt="youtube">
+            <img src="imagenes/pie/pinterest2.png" alt="pinterest">
+            <img src="imagenes/pie/instagram2.png" alt="instagram">
+          </div>
+        </section>
+      </div>
+      <div class="div2Footer">
+        <section>
+          <p>Copyright © 2020 | <span class="naranja">APAR</span>. All Rights Reserved.</p>
+        </section>
+        <section>
+          <img src="imagenes/portada/paypal.png" alt="paypal">
+          <img src="imagenes/portada/visa.png" alt="visa">
+          <img src="imagenes/portada/ae.png" alt="ae">
+          <img src="imagenes/portada/circulos1.png" alt="circulos1">
+          <img src="imagenes/portada/circulos2.png" alt="circulos2">
+        </section>
+      </div> 
+      <svg width="100" height="100">
+        <polygon 
+          points="10,90 10,10 50,70 90,10
+          90,90 90,10 50,70 10,10" 
+          style="fill:transparent;
+          stroke:orangered;
+          stroke-width:5;
+          fill-rule:evenodd;">
+        </polygon>
+      </svg>   
+    </footer>
+   </div>
+  </body>
+</html>

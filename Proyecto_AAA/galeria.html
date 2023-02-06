@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Galeria</title>
+    <link rel="stylesheet" type="text/css" href="estiloGaleria.css">
+    <style>
+      .slide {
+              position: relative;
+              box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+              width: 28%;
+              display: initial;
+          }
+      .slide-inner {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+      }
+      .slide-open:checked + .slide-item {
+          position: static;
+          opacity: 100;
+      }
+      .slide-item {
+          position: absolute;
+          opacity: 0;
+          -webkit-transition: opacity 0.6s ease-out;
+          transition: opacity 0.6s ease-out;
+      }
+      .slide-item img {
+          display: block;
+          max-width: 100%;
+      }
+      .slide-control {
+          background: rgba(0, 0, 0, 0.28);
+          border-radius: 50%;
+          color: #fff;
+          cursor: pointer;
+          display: none;
+          font-size: 40px;
+          height: 40px;
+          line-height: 35px;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(0, -50%);
+          cursor: pointer;
+          -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          text-align: center;
+          width: 40px;
+          z-index: 10;
+      }
+      .slide-control.prev {
+          left: 2%;
+      }
+      .slide-control.next {
+          right: 2%;
+      }
+      .slide-control:hover {
+          background: rgba(0, 0, 0, 0.8);
+          color: #aaaaaa;
+      }
+      #slide-1:checked ~ .control-1,
+      #slide-2:checked ~ .control-2,
+      #slide-3:checked ~ .control-3 {
+          display: block;
+      }
+      .slide-indicador {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          bottom: 2%;
+          left: 0;
+          right: 0;
+          text-align: center;
+          z-index: 10;
+      }
+      .slide-indicador li {
+          display: inline-block;
+          margin: 0 5px;
+      }
+      .slide-circulo {
+          color: #828282;
+          cursor: pointer;
+          display: block;
+          font-size: 35px;
+      }
+      .slide-circulo:hover {
+          color: #aaaaaa;
+      }
+      #slide-1:checked ~ .control-1 ~ .slide-indicador 
+            li:nth-child(1) .slide-circulo,
+      #slide-2:checked ~ .control-2 ~ .slide-indicador 
+            li:nth-child(2) .slide-circulo,
+      #slide-3:checked ~ .control-3 ~ .slide-indicador 
+            li:nth-child(3) .slide-circulo {
+          color: #428bca;
+      }
+      #titulo {
+          width: 100%;
+          position: absolute;
+          padding: 0px;
+          margin: 0px auto;
+          text-align: center;
+          font-size: 27px;
+          color: rgba(255, 255, 255, 1);
+          font-family: 'Open Sans', sans-serif;
+          z-index: 9999;
+          text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+                -1px 0px 2px rgba(255, 255, 255, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <div class="header1-1">
+          <div>
+            <div>
+              <div>
+                <img src="imagenes/cabecera/pin-de-ubicacion.png" alt="ubicacion">
+                <span>Box 565, Charlestown, Nevis, West Indies</span>
+              </div>
+              <div>
+                <img src="imagenes/cabecera/reloj-de-pared.png" alt="reloj">
+                <span>Mon - Sat 8:00 AM - 17:30 PM</span>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span>Currency:</span> <select name="select" class="select1">
+                <option value="value1">USD</option>
+                </select>
+              </div>
+              <div>
+                <span>Language:</span> <select name="select2" class="select1">
+                <option value="value1">EN</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header2">
+        <span><b>HOTLINE: +0 (800) 423-754</b></span>
+        <h1><img src="imagenes/cabecera/Screenshot_20221017_165429.png" alt="apart" class="logoApar"></h1>
+        <div class="iconosHeader" style="width: 83px;">
+          <img src="imagenes/cabecera/lupa.png" alt="lupa">
+          <img src="imagenes/cabecera/me-gusta.png" alt="corazon">
+          <img src="imagenes/cabecera/bolsa-de-la-compra.png" alt="bolsa">
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul class="nav2">
+        <li><a href="portada.html" class="shopDepartments">INICIO</a></li>
+        <li><a href="galeria.html">GALERIA</a></li>
+        <li><a href="mapaweb.html">MAPA WEB</a></li>
+        <li><a href="noticias.html">NOTICIAS</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="sectionGaleria">
+        <article>
+          <h1>Anuncios de componentes:</h1>
+        <div>
+          <div class="slide">
+            <div class="slide-inner">
+                <input class="slide-open" type="radio" id="slide-1" 
+                      name="slide" aria-hidden="true" hidden="" checked="checked">
+                <div class="slide-item">
+                    <img src="imagenes/portada/anuncio1.png" class="imagenesCarrusel">
+                </div>
+                <input class="slide-open" type="radio" id="slide-2" 
+                      name="slide" aria-hidden="true" hidden="">
+                <div class="slide-item">
+                    <img src="imagenes/portada/anuncio2.png" class="imagenesCarrusel">
+                </div>
+                <label for="slide-2" class="slide-control next control-1">›</label>
+                <label for="slide-1" class="slide-control prev control-2">‹</label>
+                <ol class="slide-indicador">
+                    <li>
+                        <label for="slide-1" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                        <label for="slide-2" class="slide-circulo">•</label>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        </div>
+        </article>       
+        <article>
+          <h2>Más componentes:</h2>
+          <div class="divProductos">
+            <img src="imagenes/portada/prod6.png" alt="gal2">
+            <img src="imagenes/portada/prod7.png" alt="gal3">
+            <img src="imagenes/portada/prod8.png" alt="gal4">
+            <img src="imagenes/portada/prod80.png" alt="gal5">
+            <img src="imagenes/portada/prod10.png" alt="gal6">
+            <img src="imagenes/portada/prod11.png" alt="gal7">
+            <img src="imagenes/portada/prod12.png" alt="gal8">
+            <img src="imagenes/portada/prod13.png" alt="gal9">
+          </div>         
+        </article>
+        <div class="imagenCoche">  
+          <img src="imagenes/portada/imagenCarrusel.png">        
+        </div>
+        <article>
+          <h2>Iconos y marcas:</h2>
+          <div class="div2Galeria">
+            <img src="imagenes/galeria/paquete.png" alt="gal11">
+            <img src="imagenes/galeria/placa.png" alt="gal12">
+            <img src="imagenes/galeria/regalo.png" alt="gal13">
+            <img src="imagenes/galeria/camion.png" alt="gal14">
+            <img src="imagenes/galeria/marca4.png" alt="gal15">
+            <img src="imagenes/galeria/marca2.png" alt="gal16">
+            <img src="imagenes/galeria/marca6.png" alt="gal17">
+            <img src="imagenes/galeria/marca10.png" alt="gal18">
+          </div>        
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div class="mainFooter">
+        <section>
+          <h3>HELP & SUPPORT</h3>
+          <a href="#">Whishlist</a>
+          <a href="#">My account</a>
+          <a href="#">Store locator</a>
+          <a href="#">FAQ</a>
+        </section>
+        <section>
+          <h3>CUSTOMER SERVICE</h3>
+          <a href="#">Support Center</a>
+          <a href="#">Policies</a>
+          <a href="#">Returns</a>
+          <a href="#">FAQ</a>
+        </section>
+        <section>
+          <h3>ABOUT US</h3>
+          <a href="#">Partners</a>
+          <a href="#">Contact us</a>
+          <a href="#">Product Recall</a>
+          <a href="#">Shipping</a>
+          <a href="#">Blog</a>
+        </section>
+        <section>
+          <h3>CONTACT</h3>
+          <span><img src="imagenes/pie/ubicacion.png" alt="ubi"> 
+          Box 565, Charlestown, Nevis, West Indies</span>
+          <span><img src="imagenes/pie/telefono.png" alt="telefono"> Phone: +(48) 880 456 789</span>
+          <span><img src="imagenes/pie/correo.png" alt="correo"> Email: help.apar@gmail.com</span>
+          <div>
+            <img src="imagenes/pie/facebook2.png" alt="facebook">
+            <img src="imagenes/pie/twitter2.png" alt="twitter">
+            <img src="imagenes/pie/youtube2.png" alt="youtube">
+            <img src="imagenes/pie/pinterest2.png" alt="pinterest">
+            <img src="imagenes/pie/instagram2.png" alt="instagram">
+          </div>
+        </section>
+      </div>
+      <div class="div2Footer">
+        <section>
+          <p>Copyright © 2020 | <span class="naranja">APAR</span>. All Rights Reserved.</p>
+        </section>
+        <section>
+          <img src="imagenes/portada/paypal.png" alt="paypal">
+          <img src="imagenes/portada/visa.png" alt="visa">
+          <img src="imagenes/portada/ae.png" alt="ae">
+          <img src="imagenes/portada/circulos1.png" alt="circulos1">
+          <img src="imagenes/portada/circulos2.png" alt="circulos2">
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
