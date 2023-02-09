@@ -15,9 +15,9 @@
   --margin0: 0px;
   --relative: relative;
   --borderNone: none;
-  --colorOrangered: orangered;
+  --colorOrangered: rgb(129, 0, 0);
   --colorNegro: black;
-  --colorGris: #A7A8AA;
+  --colorGris: #e4e0e0;
   --gap20: 20px;
   --gap18: 18px;
   --gap5: 5px;
@@ -243,7 +243,7 @@
   }
   .header1 {
     font-size: var(--FontSize13);
-    color: #8b8b8b;
+    color: #323030;
     display: var(--dFlex);
     flex-direction: var(--fRow);
     justify-content: var(--jContent);
@@ -429,7 +429,7 @@ color: var(--colorBlanco);
   align-items: var(--aItems);
 }
 #searchBusqueda {
-  background-color: var(--colorOrangered);
+  /*background-color: var(--colorOrangered);*/
   color: var(--colorBlanco);
   border: var(--borderNone);
   width: var(--width60);
@@ -538,7 +538,7 @@ li {
   list-style: none;
 }
 .gris {
-  color: grey;
+  color: #313030;
 }
 .naranja {
   color: var(--colorOrangered);
@@ -597,4 +597,10 @@ footer * > a, footer * > span {
 iframe {
   aspect-ratio: 16/9;
   width: 50%;
+}
+.naranja2 {
+  color: rgb(245 167 139);
+}
+a:focus {
+  border:2px solid black
 }

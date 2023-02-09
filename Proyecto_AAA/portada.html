@@ -5,6 +5,12 @@
     <title>Portada</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <style>
+      .botonBusqueda:focus {
+        background-color: rgb(95, 84, 84) !important;
+      }
+      input:focus {
+        background-color: red;  
+      }
       .botonAnuncio3:active {
         background-color: orange;
       }
@@ -32,9 +38,8 @@
           border-radius: 50%;
           color: #fff;
           cursor: pointer;
-          display: none;
           font-size: 40px;
-          height: 40px;
+          height: 0px;
           line-height: 35px;
           position: absolute;
           top: 50%;
@@ -59,8 +64,7 @@
       #slide-1:checked ~ .control-1,
       #slide-2:checked ~ .control-2,
       #slide-3:checked ~ .control-3 {
-          display: block;
-      }
+        height: 40px;   }
       .slide-indicador {
           list-style: none;
           margin: 0;
@@ -115,6 +119,7 @@
   <body>
     <div class="padre">
     <header>
+      <a href="#mainContent">Skip Content</a>
       <div class="header1">
         <div class="header1-1">
           <div>
@@ -130,12 +135,12 @@
           </div>
         <div>
           <div>
-            <span>Currency:</span> <select name="select" class="select1" aria-label="Selecciona un tipo de pago">
+            <span>Currency:</span> <select name="select" class="select1" id="select1" aria-labelledby="select1">
               <option value="value1">USD</option>
             </select>
           </div>
           <div>
-            <span>Language:</span> <select name="select2" class="select1" aria-label="Selecciona un lenguaje">
+            <span>Language:</span> <select name="select2" class="select1" id="select2" aria-labelledby="select2">
               <option value="value1">EN</option>
             </select>
           </div>
@@ -164,54 +169,54 @@
     </nav>
     <main>
       <div class="slide">
-            <div class="slide-inner">
-                <input class="slide-open" type="radio" id="slide-1" 
-                      name="slide" checked="checked">
-                <div class="slide-item">
-                    <img src="imagenes/portada/imagenCarrusel.png" class="imagenesCarrusel" alt="img">
-                </div>
-                <input class="slide-open" type="radio" id="slide-2" 
-                      name="slide">
-                <div class="slide-item">
-                    <img src="imagenes/portada/imagenCarrusel2.jpg" class="imagenesCarrusel" alt="img">
-                </div>
-                <input class="slide-open" type="radio" id="slide-3" 
-                      name="slide">
-                <div class="slide-item">
-                    <img src="imagenes/portada/imagenCarrusel3.jpg" class="imagenesCarrusel" alt="img">
-                </div>
-                <label for="slide-3" class="slide-control prev control-1">‹</label>
-                <label for="slide-2" class="slide-control next control-1">›</label>
-                <label for="slide-1" class="slide-control prev control-2" aria-label="Foto de un vehiculo en el carrusel">‹</label>
-                <label for="slide-3" class="slide-control next control-2">›</label>
-                <label for="slide-2" class="slide-control prev control-3">‹</label>
-                <label for="slide-1" class="slide-control next control-3">›</label>
-                <ol class="slide-indicador">
-                    <li>
-                        <label for="slide-1" class="slide-circulo">•</label>
-                    </li>
-                    <li>
-                        <label for="slide-2" class="slide-circulo">•</label>
-                    </li>
-                    <li>
-                        <label for="slide-3" class="slide-circulo">•</label>
-                    </li>
-                </ol>
+        <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1" 
+                  name="slide" checked="checked">
+            <div class="slide-item">
+                <img src="imagenes/portada/imagenCarrusel.png" class="imagenesCarrusel" alt="img">
             </div>
+            <input class="slide-open" type="radio" id="slide-2" 
+                  name="slide" checked="checked">
+            <div class="slide-item">
+                <img src="imagenes/portada/imagenCarrusel2.jpg" class="imagenesCarrusel" alt="img">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" 
+                  name="slide" checked="checked">
+            <div class="slide-item">
+                <img src="imagenes/portada/imagenCarrusel3.jpg" class="imagenesCarrusel" alt="img">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1">‹</label>
+            <label for="slide-2" class="slide-control next control-1">›</label>
+            <label for="slide-1" class="slide-control prev control-2">‹</label>
+            <label for="slide-3" class="slide-control next control-2">›</label>
+            <label for="slide-2" class="slide-control prev control-3">‹</label>
+            <label for="slide-1" class="slide-control next control-3">›</label>
+            <ol class="slide-indicador">
+                <li>
+                    <label for="slide-1" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-2" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-3" class="slide-circulo">•</label>
+                </li>
+            </ol>
         </div>
+    </div>
       <section class="busquedaRapida">
         <h2 class="titulos">Búsqueda rápida</h2>
         <form action="#" method="post" class="formBusqueda">
-        <select name="marcas" id="marcas" aria-label="Selecciona una marca de automóvil">
+        <select name="marcas" id="marcas" aria-labelledby="marcas">
           <option value="">-- Make --</option>
       </select>
-      <select name="modelo" id="modelo" disabled aria-label="Selecciona un modelo">
+      <select name="modelo" id="modelo" disabled aria-labelledby="modelo">
         <option value="">-- Model --</option>
       </select>
-      <select name="anyo" id="anyo" disabled aria-label="Selecciona un año">
+      <select name="anyo" id="anyo" disabled aria-labelledby="anyo">
         <option value="">-- Year --</option>
       </select>
-          <input type="submit" id="searchBusqueda" value="SEARCH">
+          <button type="submit" class="botonBusqueda" style="display: grid; place-content: center; background-color: red;" id="searchBusqueda">SEARCH</button>
       </form>
       </section>
       <section class="sectionPrimProductos">
@@ -241,7 +246,7 @@
           </article>
         </div>    
       </section>
-      <section class="productos">
+      <section class="productos" id="mainContent">
         <h2>Productos:</h2>
         <div class="menuProductos">
           <span><strong>SERVICE KITS</strong></span>
@@ -431,7 +436,7 @@
       </div>
       <div class="div2Footer">
         <section>
-          <p>Copyright © 2020 | <span class="naranja">APAR</span>. All Rights Reserved.</p>
+          <p>Copyright © 2020 | <span class="naranja2">APAR</span>. All Rights Reserved.</p>
         </section>
         <section>
           <img src="imagenes/portada/paypal.png" alt="paypal">
